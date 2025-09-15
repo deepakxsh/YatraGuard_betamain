@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YatraGuard — Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <!-- Snowfall Canvas -->
+  <canvas id="snow"></canvas>
+
+  <!-- Background -->
+  <div class="background"></div>
+
+  <!-- Login Container -->
+  <div class="login-container">
+    <div class="logo-area">
+      <img src="logo.jpg" alt="YatraGuard Logo" class="logo">
+      <h1 class="app-name">YatraGuard</h1>
+      <p class="tagline">Your AI Travel Companion</p>
+    </div>
+
+    <div class="login-box glass">
+      <p class="subtitle">Booked tickets offline?</p>
+
+      <!-- BookingID -->
+      <div class="input-group">
+        <input type="text" id="bookingId" required>
+        <label for="bookingId">BookingID</label>
+      </div>
+
+      <!-- Aadhaar -->
+      <div class="input-group">
+        <input type="password" id="aadhaar" maxlength="12" required>
+        <label for="aadhaar">Aadhaar</label>
+      </div>
+
+      <button id="loginBtn" class="btn-primary">Proceed to Face Verification</button>
+
+      <div class="options">
+        <a href="https://uidai.gov.in" target="_blank">Forgot your Aadhaar?</a>
+      </div>
+
+      <div class="divider">— Or —</div>
+
+      <button id="altLogin" class="btn-secondary">
+        AI didn’t detect YatraID?
+      </button>
+    </div>
+  </div>
+
+  <!-- Camera Modal -->
+  <div id="cameraModal" class="modal hidden">
+    <div class="modal-content glass">
+      <h3>Face Verification</h3>
+      <video id="camera" autoplay playsinline muted></video>
+      <div class="scan-line"></div>
+      <p id="status">Scanning... 0s</p>
+      <p id="location"></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>
